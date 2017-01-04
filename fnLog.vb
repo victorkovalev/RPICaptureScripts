@@ -1,4 +1,7 @@
-﻿''' <summary>
+﻿''' ===================================================================================================================
+'''                                         START LOGGING FUNCTIONS
+''' ===================================================================================================================
+''' <summary>
 '''     Logging Functions, helpfull to make shorter calls from scripts and support indenting.
 '''     
 '''     Sample Function:
@@ -94,9 +97,12 @@ Public Function fnLog(pType As CDRMessageType, pMessage As String)
     End If
 
     Project.LogScriptMessageEx(pType, CDRSeverityLogFileOnly, Space(gLogIndent * 2) & pMessage)
-
 lbl_end:
     Exit Function
 lbl_error:
     Project.LogScriptMessageEx(CDRTypeError, CDRSeverityLogFileOnly, "fnLogIndentDecrease Error [" & Err.Description & "]")
 End Function
+
+''' ===================================================================================================================
+'''                                         END LOGGING FUNCTIONS
+''' ===================================================================================================================
